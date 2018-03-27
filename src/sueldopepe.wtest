@@ -1,0 +1,106 @@
+import sueldopepe.*
+
+// Cadete
+test "cadete-nofalto-sobreelneto" {
+	
+	assert.equals(1750,pepe.sueldo())
+}
+test "cadete-nofalto-fijos" {
+	pepe.cambiodeResultado(fijo)
+	assert.equals(1680,pepe.sueldo())
+}
+
+test "cadete-nofalto-nada" {
+	pepe.cambiodeResultado(nada)
+	assert.equals(1600,pepe.sueldo())
+}
+
+test "cadete-faltounavez-sobreelneto" {
+	pepe.cambiodePresentismo(faltounavez)
+	assert.equals(1700,pepe.sueldo())
+}
+test "cadete-faltounavez-fijos" {
+	pepe.cambiodePresentismo(faltounavez)
+	pepe.cambiodeResultado(fijo)
+	assert.equals(1630,pepe.sueldo())
+}
+
+test "cadete-faltounavez-nada" {
+	pepe.cambiodePresentismo(faltounavez)
+	pepe.cambiodeResultado(nada)
+	assert.equals(1550,pepe.sueldo())
+}
+
+
+test "cadete-falto-sobreelneto" {
+	pepe.cambiodePresentismo(falto)
+	assert.equals(1650,pepe.sueldo())
+}
+test "cadete-falto-fijos" {
+	pepe.cambiodePresentismo(falto)
+	pepe.cambiodeResultado(fijo)
+	assert.equals(1580,pepe.sueldo())
+}
+
+test "cadete-falto-nada" {
+	pepe.cambiodePresentismo(falto)
+	pepe.cambiodeResultado(nada)
+	assert.equals(1500,pepe.sueldo())
+}
+
+// Gerente
+
+test "gerente-nofalto-sobreelneto" {
+	pepe.cambiodeCategoria(gerente)
+	assert.equals(1200,pepe.sueldo())
+}
+test "gerente-nofalto-fijos" {
+	pepe.cambiodeCategoria(gerente)
+	pepe.cambiodeResultado(fijo)
+	assert.equals(1180,pepe.sueldo())
+}
+
+test "gerente-nofalto-nada" {
+	pepe.cambiodeCategoria(gerente)
+	pepe.cambiodeResultado(nada)
+	assert.equals(1100,pepe.sueldo())
+}
+
+test "gerente-faltounavez-sobreelneto" {
+	pepe.cambiodeCategoria(gerente)
+	pepe.cambiodePresentismo(faltounavez)
+	assert.equals(1150,pepe.sueldo())
+}
+test "gerente-faltounavez-fijos" {
+	pepe.cambiodeCategoria(gerente)
+	pepe.cambiodePresentismo(faltounavez)
+	pepe.cambiodeResultado(fijo)
+	assert.equals(1130,pepe.sueldo())
+}
+
+test "gerente-faltounavez-nada" {
+	pepe.cambiodeCategoria(gerente)
+	pepe.cambiodePresentismo(faltounavez)
+	pepe.cambiodeResultado(nada)
+	assert.equals(1050,pepe.sueldo())
+}
+
+
+test "gerente-falto-sobreelneto" {
+	pepe.cambiodeCategoria(gerente)
+	pepe.cambiodePresentismo(falto)
+	assert.equals(1100,pepe.sueldo())
+}
+test "gerente-falto-fijos" {
+	pepe.cambiodeCategoria(gerente)
+	pepe.cambiodePresentismo(falto)
+	pepe.cambiodeResultado(fijo)
+	assert.equals(1080,pepe.sueldo())
+}
+
+test "gerente-falto-nada" {
+	pepe.cambiodeCategoria(gerente)
+	pepe.cambiodePresentismo(falto)
+	pepe.cambiodeResultado(nada)
+	assert.equals(1000,pepe.sueldo())
+}
